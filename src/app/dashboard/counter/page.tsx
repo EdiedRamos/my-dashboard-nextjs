@@ -1,12 +1,18 @@
+import { CartCounter } from "@/app/shopping-cart/Components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Counter Page",
-  description: "Counter section",
+  title: "Shopping Cart",
+  description: "Shopping Cart Section",
 };
 
 const CounterPage = () => {
-  return <h1>Counter Page</h1>;
+  return (
+    <div className="flex flex-col items-center justify-center w-full h-full">
+      <h1 className="text-black">Carts products</h1>
+      <CartCounter initialCartCounter={10} />
+    </div>
+  );
 };
 
 export default CounterPage;
