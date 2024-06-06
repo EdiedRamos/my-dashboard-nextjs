@@ -17,7 +17,7 @@ const getPokemons = async (
 };
 
 const PokemonsPage = async () => {
-  const pokemons = await getPokemons();
+  const pokemons = await getPokemons(50);
 
   return (
     <div className="flex flex-wrap justify-center gap-5 items-center p-3">
