@@ -1,6 +1,7 @@
+import { MdCatchingPokemon, MdDashboard } from "react-icons/md";
+
 import { FaDatabase } from "react-icons/fa6";
 import Image from "next/image";
-import { MdDashboard } from "react-icons/md";
 import React from "react";
 import { RiNextjsFill } from "react-icons/ri";
 import { SidebarMenuItem } from "./SidebarMenuItem";
@@ -17,6 +18,12 @@ const menuItems = [
     icon: <FaDatabase />,
     title: "Counter",
     subtitle: "Local State",
+  },
+  {
+    path: "/dashboard/pokemons",
+    icon: <MdCatchingPokemon />,
+    title: "Pokemons",
+    subtitle: "Check it out pokemons",
   },
 ];
 
