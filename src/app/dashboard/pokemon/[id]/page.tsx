@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import type { Pokemon } from "@/pokemons";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: { id: string };
@@ -29,16 +30,14 @@ async function loadPokemon(pokemonId: string): Promise<Pokemon | null> {
     );
     return data as Pokemon;
   } catch {
-    return null;
+    notFound();
   }
 }
 
 export default async function PokemonPage({ params }: Props) {
   const pokemon = await loadPokemon(params.id);
 
-  if (!pokemon) {
-    return <div>Not found</div>;
-  }
+  if (!pokemon) return <></>;
 
   return (
     <div className="flex mt-5 flex-col items-center text-slate-800">
