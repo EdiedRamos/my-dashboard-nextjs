@@ -30,9 +30,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 async function loadPokemon(pokemonId: string): Promise<Pokemon | null> {
   const url = "https://pokeapi.co/api/v2/pokemon/" + pokemonId;
   try {
-    const data = await fetch(url, { cache: "force-cache" }).then((res) =>
-      res.json()
-    );
+    const data = await fetch(url, {
+      // * If the revalidate is enabled this is redundant
+      // cache: "force-cache",
+      // * Regenerate the cached content
+      next: {
+        revalidate: 60 * 60 * 24 * 5,
+      },
+    }).then((res) => res.json());
     return data as Pokemon;
   } catch {
     notFound();
