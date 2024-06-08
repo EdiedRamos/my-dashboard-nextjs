@@ -1,6 +1,6 @@
-import type { PokemonsResponse, SimplePokemon } from "@/app/pokemons";
+import type { PokemonsResponse, SimplePokemon } from "@/pokemons";
 
-import { PokemonGrid } from "@/app/pokemons/";
+import { PokemonGrid } from "@/pokemons";
 
 const getPokemons = async (
   limit = 20,
@@ -13,6 +13,9 @@ const getPokemons = async (
     id: url.split("/").at(-2) ?? "",
     name,
   }));
+
+  // throw new Error("Generated Error");
+
   return pokemons;
 };
 
