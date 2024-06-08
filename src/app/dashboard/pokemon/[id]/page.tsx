@@ -7,6 +7,11 @@ interface Props {
   params: { id: string };
 }
 
+// * Special function executed at build time
+export async function generateStaticParams() {
+  return [{ id: "1" }, { id: "2" }, { id: "3" }, { id: "5" }, { id: "6" }];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pokemon = await loadPokemon(params.id);
 

@@ -60,7 +60,7 @@ export const Sidebar = () => {
       </div>
       <div id="nav" className="w-full px-6 flex flex-col gap-3">
         {menuItems.map((menuItem) => (
-          <SidebarMenuItem {...menuItem} />
+          <SidebarMenuItem key={menuItem.path} {...menuItem} />
         ))}
       </div>
     </div>
