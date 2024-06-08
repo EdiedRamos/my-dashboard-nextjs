@@ -1,2 +1,2 @@
-export type * from "./interfaces/pokemons-response";
-export type * from "./interfaces/simple-pokemon";
+export * from "./interfaces";
+export * from "./components";
