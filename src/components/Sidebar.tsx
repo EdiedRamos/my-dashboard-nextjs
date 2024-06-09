@@ -1,4 +1,4 @@
-import { MdCatchingPokemon, MdDashboard } from "react-icons/md";
+import { MdCatchingPokemon, MdDashboard, MdFavorite } from "react-icons/md";
 
 import { FaDatabase } from "react-icons/fa6";
 import Image from "next/image";
@@ -24,6 +24,12 @@ const menuItems = [
     icon: <MdCatchingPokemon />,
     title: "Pokemons",
     subtitle: "Check it out pokemons",
+  },
+  {
+    path: "/dashboard/favorites",
+    icon: <MdFavorite />,
+    title: "Favoritos",
+    subtitle: "Mira tus pokemones favoritos",
   },
 ];
 
