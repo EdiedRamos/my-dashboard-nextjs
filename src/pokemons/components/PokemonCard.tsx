@@ -1,6 +1,6 @@
-import { FaHeart } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { PokemonLike } from "./PokemonLike";
 import React from "react";
 import { SimplePokemon } from "../interfaces";
 
@@ -33,21 +33,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
             </Link>
           </div>
         </div>
-        <div className="">
-          <button className="w-full py-2 hover:bg-gray-100 flex justify-center items-center">
-            <div className="text-gray-300">
-              <FaHeart />
-            </div>
-            <div className="pl-3">
-              <p className="text-sm font-medium text-gray-800 leading-none">
-                Agregar a favoritos
-              </p>
-              <p className="text-xs text-gray-500">
-                Esperando a ser agregado 😟
-              </p>
-            </div>
-          </button>
-        </div>
+        <PokemonLike pokemon={pokemon} />
       </div>
     </div>
   );

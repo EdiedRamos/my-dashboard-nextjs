@@ -1,5 +1,6 @@
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
 import type { SimplePokemon } from "@/pokemons";
-import { createSlice } from "@reduxjs/toolkit";
 
 interface PokemonsState {
   favoritePokemons: {
@@ -14,9 +15,19 @@ const initialState: PokemonsState = {
 const pokemonsSlice = createSlice({
   name: "pokemons",
   initialState,
-  reducers: {},
+  reducers: {
+    favoritePokemonToggle(state, action: PayloadAction<SimplePokemon>) {
+      const incomingPokemon = action.payload;
+      const localPokemon = state.favoritePokemons[incomingPokemon.id];
+      if (!localPokemon) {
+        state.favoritePokemons[incomingPokemon.id] = incomingPokemon;
+      } else {
+        delete state.favoritePokemons[incomingPokemon.id];
+      }
+    },
+  },
 });
 
-export const {} = pokemonsSlice.actions;
+export const { favoritePokemonToggle } = pokemonsSlice.actions;
 
 export default pokemonsSlice.reducer;
