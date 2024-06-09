@@ -2,6 +2,10 @@ import type { PokemonsResponse, SimplePokemon } from "@/pokemons";
 
 import { PokemonGrid } from "@/pokemons";
 
+export const metadata = {
+  title: "Pokemons page",
+};
+
 const getPokemons = async (
   limit = 20,
   offset = 0
